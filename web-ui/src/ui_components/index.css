@@ -1,0 +1,34 @@
+/* loader.js */
+
+.ui-loader {
+    border: 10px solid transparent; /* Light grey */
+    border-top: 10px solid #3498db; /* Blue */
+    border-radius: 50%;
+    /* size is declared in the component itself
+    width: 80px;
+    height: 80px;
+    */
+    animation: ui-loader-spin 2s linear infinite;
+}
+
+@keyframes ui-loader-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* error_message.js */
+
+.error-message {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 3px outset red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+.error-message h1 {
+    text-align: center;
+}
+.error-message h1::before, .error-message h1::after {
+    content: '❌';
+}

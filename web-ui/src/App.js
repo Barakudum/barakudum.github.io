@@ -1,12 +1,18 @@
 import React from 'react'
-import './App.css';
+import './App.css'  // contains styles for the app
+import './generell.css'  // contains generell styles (ex. for tables)
+import './ui_components/index.css'  // contains styles for ui-components like <Loader>
+import MenuBar from './menubar'
+import HomeFeed from './home'
+import WebFooter from './webfooter'
 
 
 export default class App extends React.Component {
     render(){
-        return <div style={{textAlign: "center"}}>
-            <h1>PlayerG9</h1>
-            <img src="logo512.png" alt="logo" />
-        </div>
+        return <>
+            <MenuBar />
+            <HomeFeed />
+            <WebFooter />
+        </>
     }
 }
