@@ -1,0 +1,10 @@
+/* Theme Colors
+ * #222831  // dark blueich gray
+ * #393E46  // gray
+ * #00ADB5  // cyan
+ * #00FFF5  // lightblue
+*/
+body {
+    background-color: #222831;
+    color: #00ADB5;
+}
