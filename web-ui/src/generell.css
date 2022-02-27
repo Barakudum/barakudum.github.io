@@ -108,7 +108,7 @@
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 160px;
+    width: 140px;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -120,7 +120,7 @@
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -70px;
   
     /* Fade in tooltip */
     opacity: 0;
