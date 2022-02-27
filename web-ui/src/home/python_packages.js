@@ -27,7 +27,6 @@ export default class PythonPackages extends React.Component {
         fetch('/static_data/python_packages.json')
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 this.setState({
                     projects: data
                 })
@@ -82,7 +81,6 @@ class Package extends React.Component {
             .then((text) => {
                 var re = /<img.*src="(?<url>[a-z0-9:/\.]+)".*>/i;
                 const match = text.match(re)
-                console.log(project, match)
                 if(match){
                     this.setState({
                         iconUrl: match[1]
