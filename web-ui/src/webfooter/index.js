@@ -1,5 +1,6 @@
 import React from "react"
 import './index.css'
+import Link from "../ui_components/link"
 
 
 export default class WebFooter extends React.Component {
@@ -10,9 +11,4 @@ export default class WebFooter extends React.Component {
             </div>
         </div>
     }
-}
-
-
-function Link(props){
-    return <a href={props.url} target="_blank" rel="noreferrer">{props.children}</a>
 }
