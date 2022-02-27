@@ -1,0 +1,20 @@
+[
+    {
+        "icon_url": "https://images.discordapp.net/avatars/706554519676518410/148c6fb26f793331fdadf94d08e3531d.png?size=128",
+        "display": "Skyblock AI.pxl",
+        "description": "",
+        "link": "https://top.gg/de/bot/706554519676518410"
+    },
+    {
+        "icon_url": "https://raw.githubusercontent.com/PlayerG9/Imagefile/master/README.assets/logo.png",
+        "display": "Imagefile",
+        "description": "",
+        "link": "https://github.com/PlayerG9/ImageFile#readme"
+    },
+    {
+        "icon_url": "https://raw.githubusercontent.com/PlayerG9/AppStalker/master/README.assets/icon.png",
+        "display": "AppStalker",
+        "description": "",
+        "link": "https://github.com/PlayerG9/AppStalker#readme"
+    }
+]
