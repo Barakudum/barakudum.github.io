@@ -1,5 +1,9 @@
 .menubar {
+    position: sticky;
+    top: 0px;
+    left: 0px;
     background-color: #393E46;
+    width: 100%;
     height: 55px;
 }
 .menubar * {
