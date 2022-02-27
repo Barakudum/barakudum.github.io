@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import AboutMe from './about'
+import Creations from './creations'
 import PythonPackages from './python_packages'
 import GitProjects from './gitprojects'
 
@@ -17,6 +18,7 @@ export default class HomeFeed extends React.Component {
         return <div className='homefeed'>
             <h1>HomeFeed PlayerG9</h1>
             <AboutMe />
+            <Creations />
             <PythonPackages />
             <GitProjects />
         </div>
