@@ -15,10 +15,10 @@ export default class Creations extends React.Component {
     }
 
     render(){
-        return <>
+        return <div className="top-hr">
             <h1>Creations</h1>
             {this.state.creations.map((creation, key) => <Creation key={key} data={creation} />)}
-        </>
+        </div>
     }
 
     loadCreations(){
