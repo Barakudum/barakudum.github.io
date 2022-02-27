@@ -11,6 +11,10 @@ body {
     scrollbar-color: rgb(84, 87, 90) rgb(56, 58, 59);
 }
 
+h1 {
+    text-align: center;
+}
+
 code {
     background-color: darkgray;
     color: black;
