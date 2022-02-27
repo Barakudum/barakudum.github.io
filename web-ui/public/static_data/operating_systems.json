@@ -1,0 +1,22 @@
+[
+    {
+        "display": "Windows 10",
+        "image": "https://www.kim-bewertung.de/wp-content/uploads/2021/06/Windows-10-Icon.png",
+        "link": "https://www.microsoft.com"
+    },
+    {
+        "display": "Linux Mint",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/LinuxMint_Nice_Logo.svg/768px-LinuxMint_Nice_Logo.svg.png",
+        "link": "https://linuxmint.com/"
+    },
+    {
+        "display": "Ubuntu Server",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Ubuntu-Logo_ohne_Schriftzug.svg",
+        "link": "https://ubuntu.com/"
+    },
+    {
+        "display": "CentOS7",
+        "image": "https://bero-host.de/img/public/shop/vserver/templates/centos.png",
+        "link": "https://www.centos.org/"
+    }
+]

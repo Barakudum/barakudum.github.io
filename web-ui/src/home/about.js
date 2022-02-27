@@ -24,10 +24,32 @@ class AboutMe_Text extends React.Component {
 
 
 class AboutMe_OperatingSystems extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            operatingSystems: []
+        }
+    }
+
+    componentDidMount(){
+        this.loadOperatingSystems()
+    }
+
     render(){
         return <>
             <h2>Known Operating systems</h2>
+            {this.state.operatingSystems.map((os, key) => <InfoIcon key={key} data={os} />)}
         </>
+    }
+
+    loadOperatingSystems(){
+        fetch('/static_data/operating_systems.json')
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({
+                    operatingSystems: data
+                })
+            })
     }
 }
 
@@ -43,5 +65,13 @@ class AboutMe_LanguageAndTools extends React.Component {
 
 
 class InfoIcon extends React.Component {
-
+    render(){
+        const data = this.props.data
+        return <div className="info-icon tooltip">
+            <a href={data.link} target="_blank" rel="norefferrer">
+                <img src={data.image} alt={data.display} width="" />
+            </a>
+            <span className="tooltiptext">{data.display}</span>
+        </div>
+    }
 }
