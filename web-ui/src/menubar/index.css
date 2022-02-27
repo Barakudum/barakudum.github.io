@@ -1,17 +1,10 @@
 .menubar {
     background-color: #393E46;
+    height: 55px;
 }
-.menubar button {
-    /*float: left;*/
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-    background-color: #00ADB5;
-    color: #393E46;
-    padding: 10px 12px;
+.menubar * {
+    display: inline;
     margin: 2px;
-    font-size: larger;
-}
-.menubar button:hover {
-    background-color: #00FFF5;
+    vertical-align: middle;
+    height: 100%;
 }
