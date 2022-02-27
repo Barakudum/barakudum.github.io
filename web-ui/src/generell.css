@@ -1,3 +1,19 @@
+/*
+ * Generell HTML-Tags
+ */
+
+code {
+    background-color: darkgray;
+    color: black;
+    border-radius: 3px;
+    padding: 0px 3px;
+}
+
+/*
+ * Custom HTML-Classes
+ */
+
+
 /* used to prevent text-selection */
 .no-select {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -11,11 +27,24 @@
 /* automatically place elements in a grid
  * not used but could be helpfull (minmax needs to be adjusted)
  * could be improved by making multiple version with different sizes */
+/* .grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+}
+.grid > * {
+    padding: 5px;
+} */
 .grid {
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-    /*grid-template-columns: repeat(auto-fir, minmax(250px, 1fr));*/
+    /*grid-template-columns: repeat(auto-fit, minmax(200px, 400px));*/
+    grid-template-columns: repeat(auto-fit, minmax(0, 400px));
+    gap: 25px;
+    justify-content: center;
+    padding: 10px;
+}
+.grid > * {
+    padding: 5px;
 }
 
 /* style a button to make it look like a link to indicate
@@ -33,4 +62,50 @@
 }
 .link-like-button:hover {
     text-decoration: underline;
+}
+
+.local-footer {
+    width: 100%;
+}
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 200px;
+    /*border: 1px solid #f1f1f1;*/
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+/* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
 }
