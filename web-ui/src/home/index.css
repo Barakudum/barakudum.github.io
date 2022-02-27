@@ -1,0 +1,25 @@
+.python-packages {
+    border-top: 2px solid black;
+}
+
+.python-package-card-front {
+    border-radius: 10px;
+}
+.python-package-card-front img {
+    width: auto;
+    height: 40%;
+}
+
+.python-package-card-back {
+    border-radius: 5px;
+}
+.python-package-card-back > p:first-child {
+    height: 50%;
+}
+.python-package-card-back a {
+    margin: 10px;
+    color: blue;
+}
+.python-package-card-back a:visited {
+    color: blue;
+}
