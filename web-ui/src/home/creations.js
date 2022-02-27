@@ -1,5 +1,4 @@
 import React from "react"
-import Link from "../ui_components/link"
 
 
 export default class Creations extends React.Component {
@@ -39,7 +38,7 @@ class Creation extends React.Component {
         return <div className="creation-chip">
             <img src={creation.icon_url} alt={creation.display} width="" />
             <div className="tooltip">
-                <a href={creation.link} target="_blank" rel="norefferer">
+                <a href={creation.link} target="_blank" rel="noreferrer">
                     <p>{creation.display}</p>
                 </a>
                 <span className="tooltiptext">{creation.description}</span>

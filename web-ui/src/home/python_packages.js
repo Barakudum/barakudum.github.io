@@ -54,7 +54,7 @@ class Package extends React.Component {
             <div className="flip-card-inner">
                 <div className="flip-card-front python-package-card-front">
                     <h1>{project.display}</h1>
-                    <img src={this.state.iconUrl} />
+                    <img src={this.state.iconUrl} alt="" />
                 </div>
                 <div className="flip-card-back python-package-card-back">
                     <p>{project.description ?? "no description available"}</p>
@@ -79,7 +79,7 @@ class Package extends React.Component {
         fetch('https://raw.githubusercontent.com/PlayerG9/' + project.display + '/main/README.md')
             .then((response) => response.text())
             .then((text) => {
-                var re = /<img.*src="(?<url>[a-z0-9:/\.]+)".*>/i;
+                var re = /<img.*src="(?<url>[a-z0-9:/.]+)".*>/i;
                 const match = text.match(re)
                 if(match){
                     this.setState({

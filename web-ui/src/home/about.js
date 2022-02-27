@@ -4,15 +4,15 @@ import React from "react"
 export default class AboutMe extends React.Component {
     render(){
         return <div className="aboutme">
-            <AboutMe_Text />
-            <AboutMe_OperatingSystems />
-            <AboutMe_LanguageAndTools />
+            <AboutMeText />
+            <AboutMeOperatingSystems />
+            <AboutMeLanguageAndTools />
         </div>
     }
 }
 
 
-class AboutMe_Text extends React.Component {
+class AboutMeText extends React.Component {
     render(){
         return <>
             <h2>I'm a Developer</h2>
@@ -23,7 +23,7 @@ class AboutMe_Text extends React.Component {
 }
 
 
-class AboutMe_OperatingSystems extends React.Component {
+class AboutMeOperatingSystems extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -54,7 +54,7 @@ class AboutMe_OperatingSystems extends React.Component {
 }
 
 
-class AboutMe_LanguageAndTools extends React.Component {
+class AboutMeLanguageAndTools extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -92,7 +92,7 @@ class InfoIcon extends React.Component {
     render(){
         const data = this.props.data
         return <div className="info-icon tooltip">
-            <a href={data.link} target="_blank" rel="norefferrer">
+            <a href={data.link} target="_blank" rel="noreferrer">
                 <img src={data.image} alt={data.display} width="" />
             </a>
             <span className="tooltiptext">{data.display}</span>
