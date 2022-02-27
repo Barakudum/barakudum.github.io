@@ -55,10 +55,34 @@ class AboutMe_OperatingSystems extends React.Component {
 
 
 class AboutMe_LanguageAndTools extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            languagesAndTools: []
+        }
+    }
+
+    componentDidMount(){
+        this.loadLanguagesAndTools()
+    }
+
     render(){
         return <>
             <h2>Languages and Tools</h2>
+            {this.state.languagesAndTools.map((group, key) => <div key={key}>
+                {group.map((element, key) => <InfoIcon key={key} data={element} />)}
+            </div>)}
         </>
+    }
+
+    loadLanguagesAndTools(){
+        fetch('/static_data/languages_and_tools.json')
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({
+                    languagesAndTools: data
+                })
+            })
     }
 }
 
