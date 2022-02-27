@@ -32,3 +32,16 @@
 .error-message h1::before, .error-message h1::after {
     content: '❌';
 }
+
+/* link.js */
+
+.classic-link {
+    color: #00ADB5;
+    text-decoration: none;
+}
+.classic-link:hover {
+    text-decoration: underline;
+}
+.classic-link:visited {
+    color: #00ADB5;
+}
