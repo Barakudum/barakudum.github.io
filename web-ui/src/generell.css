@@ -89,7 +89,7 @@
 }
 /* Style the back side */
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: #00ADB5;
     color: white;
     transform: rotateY(180deg);
 }
