@@ -120,5 +120,7 @@
     color: white;
     transform: rotateY(180deg);
     border-radius: 5px;
+}
+.flip-card-back > * {
     padding: 5px;
 }
