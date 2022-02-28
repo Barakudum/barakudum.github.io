@@ -4,7 +4,7 @@ import React from 'react'
 export default class FlipCard extends React.Component {
     render(){
         if(this.props.children?.length !== 2)
-            throw Error('invalid children')
+            return <p style={{backgroundColor: "red"}}>invalid children ({'<FlipCard>'})</p>
         
         return <div className="flip-card">
             <div className="flip-card-inner">
