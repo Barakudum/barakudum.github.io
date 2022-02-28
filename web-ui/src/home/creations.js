@@ -1,4 +1,5 @@
 import React from "react"
+import ChipCard from "../ui_components/chip_card"
 
 
 export default class Creations extends React.Component {
@@ -16,7 +17,7 @@ export default class Creations extends React.Component {
     render(){
         return <div className="top-hr">
             <h1>Creations</h1>
-            {this.state.creations.map((creation, key) => <Creation key={key} data={creation} />)}
+            {this.state.creations.map((creation, key) => <ChipCard key={key} data={creation} />)}
         </div>
     }
 
@@ -28,21 +29,5 @@ export default class Creations extends React.Component {
                     creations: data
                 })
             })
-    }
-}
-
-
-class Creation extends React.Component {
-    render(){
-        const creation = this.props.data
-        return <div className="creation-chip">
-            <img src={creation.icon_url} alt={creation.display} width="" />
-            <div className="tooltip">
-                <a href={creation.link} target="_blank" rel="noreferrer">
-                    <p>{creation.display}</p>
-                </a>
-                <span className="tooltiptext">{creation.description}</span>
-            </div>
-        </div>
     }
 }

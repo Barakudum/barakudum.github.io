@@ -7,33 +7,6 @@
     height: 30px;
 }
 
-/* creations.js */
-
-.creation-chip {
-    display: inline-block;
-    margin: 10px;
-    padding: 0 25px;
-    height: 50px;
-    font-size: 16px;
-    border-radius: 25px;
-    background-color: #00FFF5;
-}
-.creation-chip a, .creation-chip a:visited {
-    text-align: center;
-    vertical-align: middle;
-    text-decoration: none;
-    color: white;
-}
-.creation-chip img {
-    float: left;
-    margin: 0 10px 0 -25px;
-    height: 50px;
-    width: 50px;
-    border: 1px solid #00FFF5;
-    border-radius: 50%;
-    background-color: black;
-}
-
 /* python_packages.js */
 
 .python-package-card-front {
