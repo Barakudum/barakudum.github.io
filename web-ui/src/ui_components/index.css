@@ -112,10 +112,12 @@
 .flip-card-front {
     background-color: #00ADB5;
     color: white;
+    border-radius: 10px;
 }
 /* Style the back side */
 .flip-card-back {
     background-color: #00ADB5;
     color: white;
     transform: rotateY(180deg);
+    border-radius: 5px;
 }

@@ -1,7 +1,6 @@
 /* python_packages.js */
 
 .python-package-card-front {
-    border-radius: 10px;
     width: 100%;
     height: 100%;
 }
@@ -10,7 +9,6 @@
 }
 
 .python-package-card-back {
-    border-radius: 5px;
     width: 100%;
     height: 100%;
 }
