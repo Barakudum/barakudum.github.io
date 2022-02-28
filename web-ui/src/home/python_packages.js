@@ -64,7 +64,9 @@ class Package extends React.Component {
                         <p>Not installable via pip</p>
                     }
                     <div className="local-footer">
-                        <Link className="icon-pypi" url={"https://pypi.org/project/" + project.pypi_name + "/"}>PyPi.org</Link>
+                        {project.pypi_name && project.pip_installable !== false && 
+                            <Link className="icon-pypi" url={"https://pypi.org/project/" + project.pypi_name + "/"}>PyPi.org</Link>
+                        }
                         <Link className="icon-github" url={"https://github.com/PlayerG9/" + project.display + "#readme"}>Github Repo</Link>
                     </div>
                 </div>
