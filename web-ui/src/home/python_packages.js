@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "../ui_components/link"
+import FlipCard from "../ui_components/flip_card"
 
 
 export default class PythonPackages extends React.Component {
@@ -50,28 +51,26 @@ class Package extends React.Component {
     render(){
         const project = this.props.data
 
-        return <div className="flip-card">
-            <div className="flip-card-inner">
-                <div className="flip-card-front python-package-card-front">
-                    <h1>{project.display}</h1>
-                    <img src={this.state.iconUrl} alt="" />
-                </div>
-                <div className="flip-card-back python-package-card-back">
-                    <p>{project.description ?? "no description available"}</p>
-                    {project.pypi_name ?
-                        <p>Installation: <code>pip install {project.pypi_name}</code> {project.pip_installable === false && "soon"}</p>
-                        :
-                        <p>Not installable via pip</p>
+        return <FlipCard>
+            <div className="python-package-card-front">
+                <h1>{project.display}</h1>
+                <img src={this.state.iconUrl} alt="" />
+            </div>
+            <div className="python-package-card-back">
+                <p>{project.description ?? "no description available"}</p>
+                {project.pypi_name ?
+                    <p>Installation: <code>pip install {project.pypi_name}</code> {project.pip_installable === false && "soon"}</p>
+                    :
+                    <p>Not installable via pip</p>
+                }
+                <div className="local-footer">
+                    {project.pypi_name && project.pip_installable !== false && 
+                        <Link className="icon-pypi" url={"https://pypi.org/project/" + project.pypi_name + "/"}>PyPi.org</Link>
                     }
-                    <div className="local-footer">
-                        {project.pypi_name && project.pip_installable !== false && 
-                            <Link className="icon-pypi" url={"https://pypi.org/project/" + project.pypi_name + "/"}>PyPi.org</Link>
-                        }
-                        <Link className="icon-github" url={"https://github.com/PlayerG9/" + project.display + "#readme"}>Github Repo</Link>
-                    </div>
+                    <Link className="icon-github" url={"https://github.com/PlayerG9/" + project.display + "#readme"}>Github Repo</Link>
                 </div>
             </div>
-        </div>
+        </FlipCard>
     }
     
     findIconUrl(){
