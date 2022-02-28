@@ -13,7 +13,7 @@
     height: 100%;
 }
 .python-package-card-back > p:first-child {
-    height: 50%;
+    height: 30%;
 }
 .python-package-card-back a {
     margin: 10px;
@@ -21,4 +21,33 @@
 }
 .python-package-card-back a:visited {
     color: blue;
+}
+
+/* gitprojects.js */
+
+.gitrepo-front {
+    width: 100%;
+    height: 100%;
+}
+.gitrepo-front img {
+    height: 40%;
+}
+
+.gitrepo-back {
+    width: 100%;
+    height: 100%;
+}
+.gitrepo-back > p:first-child {
+    height: 40%;
+}
+.gitrepo-back a {
+    margin: 10px;
+    color: blue;
+}
+.gitrepo-back a:visited {
+    color: blue;
+}
+
+.gitrepo-stats {
+    text-align: left;
 }
