@@ -120,4 +120,5 @@
     color: white;
     transform: rotateY(180deg);
     border-radius: 5px;
+    padding: 5px;
 }
