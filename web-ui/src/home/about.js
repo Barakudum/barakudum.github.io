@@ -1,4 +1,5 @@
 import React from "react"
+import ChipCard from "../ui_components/chip_card"
 
 
 export default class AboutMe extends React.Component {
@@ -38,7 +39,9 @@ class AboutMeOperatingSystems extends React.Component {
     render(){
         return <>
             <h2>Known Operating systems</h2>
-            {this.state.operatingSystems.map((os, key) => <InfoIcon key={key} data={os} />)}
+            <div style={{}}>
+                {this.state.operatingSystems.map((os, key) => <ChipCard key={key} data={os} />)}
+            </div>
         </>
     }
 
@@ -69,9 +72,11 @@ class AboutMeLanguageAndTools extends React.Component {
     render(){
         return <>
             <h2>Languages and Tools</h2>
-            {this.state.languagesAndTools.map((group, key) => <div key={key}>
-                {group.map((element, key) => <InfoIcon key={key} data={element} />)}
-            </div>)}
+            {this.state.languagesAndTools.map((group, key) => 
+                <div key={key}>
+                    {group.map((element, key) => <ChipCard key={key} data={element} />)}
+                </div>
+            )}
         </>
     }
 
@@ -87,15 +92,21 @@ class AboutMeLanguageAndTools extends React.Component {
 }
 
 
-
-class InfoIcon extends React.Component {
-    render(){
-        const data = this.props.data
-        return <div className="info-icon tooltip">
-            <a href={data.link} target="_blank" rel="noreferrer">
-                <img src={data.image} alt={data.display} width="" />
-            </a>
-            <span className="tooltiptext">{data.display}</span>
-        </div>
-    }
-}
+// /* about.js */
+// .info-icon {
+//     margin: 10px;
+// }
+// .info-icon img {
+//     height: 30px;
+// }
+// class InfoIcon extends React.Component {
+//     render(){
+//         const data = this.props.data
+//         return <div className="info-icon tooltip">
+//             <a href={data.link} target="_blank" rel="noreferrer">
+//                 <img src={data.image} alt={data.display} width="" />
+//             </a>
+//             <span className="tooltiptext">{data.display}</span>
+//         </div>
+//     }
+// }
