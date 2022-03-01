@@ -4,7 +4,7 @@ import ChipCard from "../ui_components/chip_card"
 
 export default class AboutMe extends React.Component {
     render(){
-        return <div className="aboutme">
+        return <div className="aboutme parallax">
             <AboutMeText />
             <AboutMeOperatingSystems />
             <AboutMeLanguageAndTools />

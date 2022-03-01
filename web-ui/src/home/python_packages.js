@@ -16,7 +16,7 @@ export default class PythonPackages extends React.Component {
     }
 
     render(){
-        return <div className="top-hr python-packages">
+        return <div className="top-hr python-packages parallax">
             <h1>Python Packages</h1>
             <div className="grid">
                 {this.state.projects.map((project, key) => <Package key={key} data={project} />)}

@@ -15,7 +15,7 @@ export default class Creations extends React.Component {
     }
 
     render(){
-        return <div className="top-hr creations">
+        return <div className="top-hr creations parallax">
             <h1>Creations</h1>
             {this.state.creations.map((creation, key) => <ChipCard key={key} data={creation} />)}
         </div>

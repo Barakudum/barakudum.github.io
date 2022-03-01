@@ -16,7 +16,7 @@ export default class GitProjects extends React.Component {
     }
 
     render(){
-        return <div className="top-hr gitprojects">
+        return <div className="top-hr gitprojects parallax">
             <h1>GitProjects</h1>
             <div className="grid">
                 {this.state.repos.map((repo, key) => <Repo key={key} data={repo} />)}
