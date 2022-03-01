@@ -1,4 +1,26 @@
+/* about.js */
+
+.aboutme {
+    background-image: url(https://wallpaper.dog/large/20518274.jpg);
+    /* background-image: url(https://wallpapercave.com/wp/wp6784386.jpg); */
+    background-size: 100%;
+    padding: 30px;
+}
+
+/* creations.js */
+
+.creations {
+    background-image: url(https://wallpaperaccess.com/full/1287687.jpg);
+    background-size: 100%;
+    text-align: center;
+}
+
 /* python_packages.js */
+
+.python-packages {
+    background-image: url(https://images7.alphacoders.com/679/thumb-1920-679140.png);
+    background-size: 100%;
+}
 
 .python-package-card-front {
     width: 100%;
@@ -22,23 +44,37 @@
 .python-package-card-back a:visited {
     color: blue;
 }
+.python-package-card-back .local-footer {
+    bottom: 20px;
+}
 
 /* gitprojects.js */
+
+.gitprojects {
+    background-image: url(https://wallpaperaccess.com/full/3414986.png);
+    /* background-image: url(https://opengraph.githubassets.com); */
+    background-size: 100%;
+}
 
 .gitrepo-front {
     width: 100%;
     height: 100%;
-}
-.gitrepo-front img {
-    height: 40%;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .gitrepo-back {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .gitrepo-back > p:first-child {
-    height: 40%;
+    height: 48%;
 }
 .gitrepo-back a {
     margin: 10px;
@@ -47,7 +83,6 @@
 .gitrepo-back a:visited {
     color: blue;
 }
-
 .gitrepo-stats {
     text-align: left;
 }

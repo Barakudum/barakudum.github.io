@@ -16,7 +16,6 @@ export default class HomeFeed extends React.Component {
 
     render(){
         return <div className='homefeed'>
-            <h1>HomeFeed PlayerG9</h1>
             <AboutMe />
             <Creations />
             <PythonPackages />

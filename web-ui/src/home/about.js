@@ -16,6 +16,7 @@ export default class AboutMe extends React.Component {
 class AboutMeText extends React.Component {
     render(){
         return <>
+            <h1>HomeFeed PlayerG9</h1>
             <h2>I'm a Developer</h2>
             <p>I'm currently learning everything</p>
             <p>I'm looking to collaborate with other content creators</p>

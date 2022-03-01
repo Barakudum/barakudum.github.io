@@ -16,7 +16,7 @@ export default class GitProjects extends React.Component {
     }
 
     render(){
-        return <div className="top-hr">
+        return <div className="top-hr gitprojects">
             <h1>GitProjects</h1>
             <div className="grid">
                 {this.state.repos.map((repo, key) => <Repo key={key} data={repo} />)}
@@ -50,14 +50,17 @@ class Repo extends React.Component {
 
     render(){
         const repo = this.props.data
+        const imgUrl = "https://opengraph.githubassets.com/32e88f7df03756f8001bf1fb87cf789c1397014e4cb2a1506d0b077c5f73aa92/"
         return <FlipCard>
-            <div className="gitrepo-front">
+            <img className="gitrepo-front" src={imgUrl + repo.full_name} alt={repo.name} />
+            {/* <div className="gitrepo-front">
                 <h1>{repo.name}</h1>
                 <img src={this.state.iconUrl} alt="" />
-            </div>
+            </div> */}
             {/* position: relative is needed for local-footer */}
-            <div className="gitrepo-back" style={{position: "relative"}}>
+            <div className="gitrepo-back" style={{position: "relative", backgroundImage: "url(" + this.state.iconUrl + ")"}}>
                 <p>{repo.description ?? "no description available"}</p>
+                {/* <img src={this.state.iconUrl} alt="" /> */}
                 <div className="gitrepo-stats">
                     <pre>
                         Language:    {repo.language ?? 'unknown'}<br/>
