@@ -1,7 +1,7 @@
 /* about.js */
 
 .aboutme {
-    background-image: url(https://wallpaper.dog/large/20518274.jpg);
+    background-image: url(./images/aboutme.jpg);
     /* background-image: url(https://wallpapercave.com/wp/wp6784386.jpg); */
     padding: 30px;
 }
@@ -9,14 +9,14 @@
 /* creations.js */
 
 .creations {
-    background-image: url(https://wallpaperaccess.com/full/1287687.jpg);
+    background-image: url(./images/creations.jpg);
     text-align: center;
 }
 
 /* python_packages.js */
 
 .python-packages {
-    background-image: url(https://images7.alphacoders.com/679/thumb-1920-679140.png);
+    background-image: url(./images/python-packages.jpg);
 }
 
 .python-package-card-front {
@@ -48,7 +48,7 @@
 /* gitprojects.js */
 
 .gitprojects {
-    background-image: url(https://wallpaperaccess.com/full/3414986.png);
+    background-image: url(./images/github-projects.jpg);
     /* background-image: url(https://opengraph.githubassets.com); */
 }
 
