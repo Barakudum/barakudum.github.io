@@ -4,7 +4,7 @@ import './icons.css' // contains icon-class to display small icon to the left of
 import './generell.css'  // contains generell styles (ex. for tables)
 import './ui_components/index.css'  // contains styles for ui-components like <Loader>
 import MenuBar from './menubar'
-import HomeFeed from './home'
+import HomeFeed from './homefeed'
 import WebFooter from './webfooter'
 
 
