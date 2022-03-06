@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import AboutMe from './about'
+import AboutMe from './aboutme'
 import Creations from './creations'
 import PythonPackages from './python_packages'
 import GitProjects from './gitprojects'
