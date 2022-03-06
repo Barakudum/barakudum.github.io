@@ -1,0 +1,44 @@
+[
+    {
+        "icon_url": "https://avatars.githubusercontent.com/u/486082?s=200&v=4",
+        "display": "Cython",
+        "description": "Cython lets you write Python code with nearly the speed of C or C++",
+        "link": "https://cython.org/"
+    },
+    {
+        "icon_url": "https://docs.python-requests.org/en/latest/_static/requests-sidebar.png",
+        "display": "requests",
+        "description": "Requests is an elegant and simple HTTP library for Python, built for human beings.",
+        "link": "https://docs.python-requests.org/en/latest/"
+    },
+    {
+        "icon_url": "https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-248x250.png",
+        "display": "Pillow",
+        "description": "The Python Imaging Library adds image processing capabilities to your Python interpreter.",
+        "link": "https://pillow.readthedocs.io/en/stable/"
+    },
+    {
+        "icon_url": "https://dissem.ch/assets/images/msgpack/icon.svg",
+        "display": "msgpack",
+        "description": "MessagePack lets you exchange data among multiple languages like JSON. But it's faster and smaller.",
+        "link": "https://msgpack.org/"
+    },
+    {
+        "icon_url": "https://avatars.githubusercontent.com/u/231856?s=120&v=4",
+        "display": "keyboard",
+        "description": "Take full control of your keyboard with this small Python library",
+        "link": "https://github.com/boppreh/keyboard"
+    },
+    {
+        "icon_url": "https://avatars.githubusercontent.com/u/231856?s=120&v=4",
+        "display": "mouse",
+        "description": "Take full control of your mouse with this small Python library",
+        "link": "https://github.com/boppreh/mouse"
+    },
+    {
+        "icon_url": "https://pyinstaller.readthedocs.io/en/stable/_static/pyinstaller-draft1a-100_trans.png",
+        "display": "pyinstaller",
+        "description": "PyInstaller bundles a Python application and all its dependencies into a single package",
+        "link": "https://pyinstaller.readthedocs.io/en/stable/index.html"
+    }
+]
