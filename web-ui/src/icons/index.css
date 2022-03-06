@@ -1,0 +1,27 @@
+.icon-github {
+    background-image: url(./github.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 24px;
+}
+
+.icon-pypi {
+    background-image: url(./pypi.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 28px;
+}
+
+.icon-python {
+    background-image: url(./python.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 25px;
+}
+
+.icon-web {
+    background-image: url(./website.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 22px;
+}
