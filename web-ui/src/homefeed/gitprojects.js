@@ -28,8 +28,17 @@ export default class GitProjects extends React.Component {
         fetch('https://api.github.com/users/PlayerG9/repos')
             .then((response) => response.json())
             .then((data) => {
+                // sort repos by last-update
+                const sorted = data.sort((a, b) => {
+                    let ad = new Date(a.updated_at)
+                    let bd = new Date(b.updated_at)
+                    if(ad < bd) return 1
+                    if(ad > bd) return -1
+                    return 0
+                })
+
                 this.setState({
-                    repos: data
+                    repos: sorted
                 })
             })
     }
@@ -50,13 +59,12 @@ class Repo extends React.Component {
 
     render(){
         const repo = this.props.data
+        // this is the base-url for the github-cards (I fund it with luck)
         const imgUrl = "https://opengraph.githubassets.com/32e88f7df03756f8001bf1fb87cf789c1397014e4cb2a1506d0b077c5f73aa92/"
         return <FlipCard>
+            {/* front of the flip-card (only an image) */}
             <img className="gitrepo-front" src={imgUrl + repo.full_name} alt={repo.name} />
-            {/* <div className="gitrepo-front">
-                <h1>{repo.name}</h1>
-                <img src={this.state.iconUrl} alt="" />
-            </div> */}
+            {/* back of the flip-card */}
             {/* position: relative is needed for local-footer */}
             <div className="gitrepo-back" style={{position: "relative", backgroundImage: "url(" + this.state.iconUrl + ")"}}>
                 <p>{repo.description ?? "no description available"}</p>
