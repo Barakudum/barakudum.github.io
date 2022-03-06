@@ -8,6 +8,8 @@ export default class AboutMe extends React.Component {
             <AboutMeText />
             <AboutMeOperatingSystems />
             <AboutMeLanguageAndTools />
+            <PythonLibrarys />
+            <JavascriptLibrarys />
         </div>
     }
 }
@@ -93,21 +95,67 @@ class AboutMeLanguageAndTools extends React.Component {
 }
 
 
-// /* about.js */
-// .info-icon {
-//     margin: 10px;
-// }
-// .info-icon img {
-//     height: 30px;
-// }
-// class InfoIcon extends React.Component {
-//     render(){
-//         const data = this.props.data
-//         return <div className="info-icon tooltip">
-//             <a href={data.link} target="_blank" rel="noreferrer">
-//                 <img src={data.image} alt={data.display} width="" />
-//             </a>
-//             <span className="tooltiptext">{data.display}</span>
-//         </div>
-//     }
-// }
+class PythonLibrarys extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            pythonLibrarys: []
+        }
+    }
+
+    componentDidMount(){
+        this.loadPythonLibrarys()
+    }
+
+    render(){
+        return <>
+            <h2>Python Librarys</h2>
+            {this.state.pythonLibrarys.map((element, key) => 
+                <ChipCard key={key} data={element} />
+            )}
+        </>
+    }
+
+    loadPythonLibrarys(){
+        fetch('/static_data/python_librarys.json')
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({
+                    pythonLibrarys: data
+                })
+            })
+    }
+}
+
+
+class JavascriptLibrarys extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            javascriptLibrarys: []
+        }
+    }
+
+    componentDidMount(){
+        this.loadJavascriptLibrarys()
+    }
+
+    render(){
+        return <>
+            <h2>Javascript Librarys</h2>
+            {this.state.javascriptLibrarys.map((element, key) => 
+                <ChipCard key={key} data={element} />
+            )}
+        </>
+    }
+
+    loadJavascriptLibrarys(){
+        fetch('/static_data/javascript_librarys.json')
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({
+                    javascriptLibrarys: data
+                })
+            })
+    }
+}
