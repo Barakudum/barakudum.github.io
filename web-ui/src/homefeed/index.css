@@ -4,6 +4,8 @@
     background-image: url(./images/aboutme.jpg);
     /* background-image: url(https://wallpapercave.com/wp/wp6784386.jpg); */
     padding: 30px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 /* creations.js */
@@ -50,6 +52,8 @@
 .gitprojects {
     background-image: url(./images/github-projects.jpg);
     /* background-image: url(https://opengraph.githubassets.com); */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .gitrepo-front {
