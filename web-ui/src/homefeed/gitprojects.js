@@ -30,8 +30,8 @@ export default class GitProjects extends React.Component {
             .then((data) => {
                 // sort repos by last-update
                 const sorted = data.sort((a, b) => {
-                    let ad = new Date(a.updated_at)
-                    let bd = new Date(b.updated_at)
+                    let ad = new Date(a.pushed_at)
+                    let bd = new Date(b.pushed_at)
                     if(ad < bd) return 1
                     if(ad > bd) return -1
                     return 0
@@ -101,7 +101,7 @@ class Repo extends React.Component {
         fetch('https://raw.githubusercontent.com/PlayerG9/' + repo.name + '/main/README.md')
             .then((response) => response.text())
             .then((text) => {
-                var re = /<img.*src="(?<url>[a-z0-9:/.]+)".*>/i;
+                var re = /<img .*src="(?<url>[a-z0-9\-:/.]+)" .*\/>/i;
                 const match = text.match(re)
                 if(match){
                     this.setState({
@@ -109,6 +109,9 @@ class Repo extends React.Component {
                     })
                     return
                 }
+            })
+            .catch((error) => {
+                console.error('Failed to fetch repo-readme', repo.full_name, error)
             })
     }
 }
