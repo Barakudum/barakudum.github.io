@@ -49,9 +49,12 @@
 }
 
 /* add position: relative to the parent this footer should belong to */
+.local-footer-container {
+    position: relative;
+}
 .local-footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     width: 100%;
 }
 
