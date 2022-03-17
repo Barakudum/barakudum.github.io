@@ -8,13 +8,18 @@ export default class FlipCard extends React.Component {
         
         return <div className="flip-card">
             <div className="flip-card-inner">
-                <div className="flip-card-front">
-                    {this.props.children[0]}
-                </div>
-                <div className="flip-card-back">
-                    {this.props.children[1]}
-                </div>
+                {this.addClass(this.props.children[0], 'flip-card-front')}
+                {this.addClass(this.props.children[1], 'flip-card-back')}
             </div>
         </div>
+    }
+
+    addClass(child, className){
+        const props = {
+            ...child.props
+        }
+        props.className += ` ${className}`
+
+        return React.cloneElement(child, props)
     }
 }

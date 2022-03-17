@@ -107,8 +107,7 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-}
-.flip-card-front > *, .flip-card-back > * {
+    
     border-radius: 5px;
 }
 /* Style the back side */
