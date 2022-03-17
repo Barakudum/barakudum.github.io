@@ -108,18 +108,20 @@
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
+.flip-card-front > *, .flip-card-back > * {
+    border-radius: 5px;
+}
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-    background-color: #00ADB5;
-    color: white;
+    /* background-color: #00ADB5; */
+    /* color: white; */
     border-radius: 10px;
 }
 /* Style the back side */
 .flip-card-back {
-    background-color: #00ADB5;
-    color: white;
+    /* background-color: #00ADB5; */
+    /* color: white; */
     transform: rotateY(180deg);
-    border-radius: 5px;
 }
 .flip-card-back > * {
     padding: 5px;
