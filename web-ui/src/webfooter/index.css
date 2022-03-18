@@ -9,3 +9,7 @@
     text-align: center;
     border-radius: 10px;
 }
+
+.footer a, .footer a:visited {
+    color: #00ADB5;
+}

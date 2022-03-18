@@ -36,14 +36,14 @@
 /* link.js */
 
 .classic-link {
-    color: #00ADB5;
+    color: blue;
     text-decoration: none;
 }
 .classic-link:hover {
     text-decoration: underline;
 }
 .classic-link:visited {
-    color: #00ADB5;
+    color: blue;
 }
 
 /* chip_card.js */
@@ -109,6 +109,11 @@
     backface-visibility: hidden;
     
     border-radius: 5px;
+
+    background: rgb(0,173,181);
+    background: linear-gradient(0deg, rgba(0,173,181,1) 0%, rgba(0,255,245,1) 100%);
+    /* background: radial-gradient(circle, rgba(0,173,181,1) 0%, rgba(0,255,245,1) 100%); */
+    color: black;
 }
 /* Style the back side */
 .flip-card-back {
