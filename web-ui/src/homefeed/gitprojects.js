@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "../ui_components/link"
 import FlipCard from "../ui_components/flip_card"
+import gitIcon from '../icons/github.png'
 
 
 export default class GitProjects extends React.Component {
@@ -17,7 +18,9 @@ export default class GitProjects extends React.Component {
 
     render(){
         return <div className="top-hr gitprojects parallax">
-            <h1>GitProjects</h1>
+            <h1>Github</h1>
+            <img src="https://github-readme-stats.vercel.app/api?username=PlayerG9&show_icons=true&theme=vue-dark" alt="" />
+            <h1>Git-Projects</h1>
             <div className="grid">
                 {this.state.repos.map((repo, key) => <Repo key={key} data={repo} />)}
             </div>
@@ -59,23 +62,28 @@ class Repo extends React.Component {
 
     render(){
         const repo = this.props.data
-        // this is the base-url for the github-cards (I fund it with luck)
-        const imgUrl = "https://opengraph.githubassets.com/32e88f7df03756f8001bf1fb87cf789c1397014e4cb2a1506d0b077c5f73aa92/"
         return <FlipCard>
-            {/* front of the flip-card (only an image) */}
-            <img className="gitrepo-front" src={imgUrl + repo.full_name} alt={repo.name} />
+            {/* front of the flip-card*/}
+            <div className="gitrepo-front">
+                <h1>{repo.name}</h1>
+                <img className="repo-icon" src={this.state.iconUrl} alt="" />
+                <div className="stats">
+                    <span>👁{repo.watchers_count}</span>
+                    <span>⚠{repo.open_issues_count}</span>
+                    <span>★{repo.stargazers_count}</span>
+                    <span>⑂{repo.forks_count}</span>
+                </div>
+                <img className="git-icon" src={gitIcon} alt="" />
+            </div>
             {/* back of the flip-card */}
             {/* position: relative is needed for local-footer */}
-            <div className="gitrepo-back" style={{position: "relative", backgroundImage: "url(" + this.state.iconUrl + ")"}}>
-                <p>{repo.description ?? "no description available"}</p>
-                {/* <img src={this.state.iconUrl} alt="" /> */}
-                <div className="gitrepo-stats">
-                    <pre>
-                        Language:    {repo.language ?? 'unknown'}<br/>
-                        Created at:  {this.formatDate(repo.created_at)}<br/>
-                        Last Update: {this.formatDate(repo.updated_at)}
-                    </pre>
-                </div>
+            <div className="gitrepo-back local-footer-container">
+                <p className="description">{repo.description ?? "no description available"}</p>
+                <pre className="stats">
+                    Language:    {repo.language ?? 'unknown'}<br/>
+                    Created at:  {this.formatDate(repo.created_at)}<br/>
+                    Last Update: {this.formatDate(repo.updated_at)}
+                </pre>
                 <div className="local-footer">
                     {repo.homepage &&
                         <Link className="icon-web" url={repo.homepage}>Project Homepage</Link>

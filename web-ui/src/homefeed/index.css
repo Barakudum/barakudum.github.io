@@ -21,18 +21,25 @@
     background-image: url(./images/python-packages.jpg);
 }
 
-.python-package-card-front {
+/* .python-package-card-front {
+    
+} */
+.python-package-card-front h1 {
+    position: absolute;
+    top: 0px;
     width: 100%;
-    height: 100%;
 }
 .python-package-card-front img {
-    height: 40%;
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: 20px;
+    height: 50%;
+    border-radius: 5px;
 }
 
-.python-package-card-back {
-    width: 100%;
-    height: 100%;
-}
+/* .python-package-card-back {
+    
+} */
 .python-package-card-back > p:first-child {
     height: 30%;
 }
@@ -43,9 +50,6 @@
 .python-package-card-back a:visited {
     color: blue;
 }
-.python-package-card-back .local-footer {
-    bottom: 20px;
-}
 
 /* gitprojects.js */
 
@@ -55,6 +59,11 @@
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+.gitprojects > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .gitrepo-front {
     width: 100%;
@@ -62,27 +71,48 @@
     border-radius: 10px;
     border: 1px solid black;
 }
+.gitrepo-front h1 {
+    position: absolute;
+    max-width: 75%;
+    text-align: left;
+    top: 10px;
+    left: 10px;
+}
+.gitrepo-front .repo-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    max-width: 100px;
+    border-radius: 5px;
+}
+.gitrepo-front .stats {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
+.gitrepo-front .stats span {
+    margin-left: 10px;
+}
+.gitrepo-front .git-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    max-width: 20px;
+}
 
 .gitrepo-back {
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    background-color: white;
-    color: black;
-    background-size: 25%;
-    background-repeat: no-repeat;
-    background-position: center;
 }
-.gitrepo-back > p:first-child {
-    height: 48%;
+.gitrepo-back .description {
+    position: absolute;
+    top: 0px;
+    width: 100%;
 }
-.gitrepo-back a {
-    margin: 10px;
-    color: blue;
-}
-.gitrepo-back a:visited {
-    color: blue;
-}
-.gitrepo-stats {
+.gitrepo-back .stats {
+    position: absolute;
+    left: 5px;
+    bottom: 25px;
     text-align: left;
 }
