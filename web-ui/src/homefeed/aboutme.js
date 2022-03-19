@@ -42,7 +42,7 @@ class AboutMeOperatingSystems extends React.Component {
     render(){
         return <>
             <h2>Known Operating systems</h2>
-            <div style={{}}>
+            <div className="chipcard-list">
                 {this.state.operatingSystems.map((os, key) => <ChipCard key={key} data={os} />)}
             </div>
         </>
@@ -76,7 +76,7 @@ class AboutMeLanguageAndTools extends React.Component {
         return <>
             <h2>Languages and Tools</h2>
             {this.state.languagesAndTools.map((group, key) => 
-                <div key={key}>
+                <div className="chipcard-list" key={key}>
                     {group.map((element, key) => <ChipCard key={key} data={element} />)}
                 </div>
             )}
@@ -110,9 +110,11 @@ class PythonLibrarys extends React.Component {
     render(){
         return <>
             <h2>Python Librarys</h2>
-            {this.state.pythonLibrarys.map((element, key) => 
-                <ChipCard key={key} data={element} />
-            )}
+            <div className="chipcard-list">
+                {this.state.pythonLibrarys.map((element, key) => 
+                    <ChipCard key={key} data={element} />
+                )}
+            </div>
         </>
     }
 
@@ -143,9 +145,11 @@ class JavascriptLibrarys extends React.Component {
     render(){
         return <>
             <h2>Javascript Librarys</h2>
-            {this.state.javascriptLibrarys.map((element, key) => 
-                <ChipCard key={key} data={element} />
-            )}
+            <div className="chipcard-list">
+                {this.state.javascriptLibrarys.map((element, key) => 
+                    <ChipCard key={key} data={element} />
+                )}
+            </div>
         </>
     }
 
