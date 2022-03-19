@@ -10,8 +10,6 @@
 
 .chipcard-list {
     margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 /* creations.js */
