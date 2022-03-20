@@ -60,6 +60,7 @@
 .gitprojects {
     background-image: url(./images/github-projects.jpg);
     /* background-image: url(https://opengraph.githubassets.com); */
+    /* because this is the bottom of the website it get's rounded border */
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -100,9 +101,26 @@
 }
 .gitrepo-front .git-icon {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
     right: 5px;
     max-width: 20px;
+}
+.gitrepo-front .color-bar {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 6px; /* height of the color-bar */
+    display: flex; /* to put the colors in one line */
+}
+.gitrepo-front .color-bar .color {
+    height: 100%;
+}
+.gitrepo-front .color-bar .color:first-child {
+    border-bottom-left-radius: 10px;
+}
+.gitrepo-front .color-bar .color:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 .gitrepo-back {

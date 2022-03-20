@@ -2,6 +2,7 @@ import React from "react"
 import Link from "../ui_components/link"
 import FlipCard from "../ui_components/flip_card"
 import gitIcon from '../icons/github.png'
+import GitColors from './github_language_colors'
 
 
 export default class GitProjects extends React.Component {
@@ -74,6 +75,7 @@ class Repo extends React.Component {
                     <span>⑂{repo.forks_count}</span>
                 </div>
                 <img className="git-icon" src={gitIcon} alt="" />
+                <RepoLanguages repo={repo} />
             </div>
             {/* back of the flip-card */}
             {/* position: relative is needed for local-footer */}
@@ -120,6 +122,61 @@ class Repo extends React.Component {
             })
             .catch((error) => {
                 console.error('Failed to fetch repo-readme', repo.full_name, error)
+            })
+    }
+}
+
+
+class RepoLanguages extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            languages: null,
+            error: null
+        }
+    }
+
+    componentDidMount(){
+        this.loadLanguages()
+    }
+
+    render(){
+        const languages = this.state.languages
+
+        // is null/undefined or contains no keys/languages
+        if(!languages || Object.keys(languages).length === 0 || this.state.error)
+            return null
+
+        let total = 0
+        for(let size of Object.values(languages)){
+            total += size
+        }
+
+        return <div className="color-bar">
+            {Object.keys(languages).map(language => 
+                <div key={language} className="color" style={{width: `${Math.round(languages[language] / total * 100)}%`, backgroundColor: GitColors[language]}} />
+            )}
+        </div>
+    }
+
+    loadLanguages(){
+        const repo = this.props.repo
+
+        fetch(`https://api.github.com/repos/${repo.full_name}/languages`)
+            .then((response) => {
+                if(!response.ok)
+                    throw Error()
+                return response.json()
+            })
+            .then((data) => {
+                this.setState({
+                    languages: data
+                })
+            })
+            .catch((error) => {
+                this.setState({
+                    error: error
+                })
             })
     }
 }
