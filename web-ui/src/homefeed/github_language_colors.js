@@ -1,4 +1,4 @@
-export default {
+const language_colors = {
     "1C Enterprise": "#814CCC",
     "2-Dimensional Array": "#38761D",
     "4D": "#004289",
@@ -500,3 +500,4 @@ export default {
     "ZIL": "#dc75e5",
     "Zimpl": "#d67711"
 }
+export default language_colors
