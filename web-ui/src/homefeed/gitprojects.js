@@ -23,52 +23,49 @@ export default class GitProjects extends React.Component {
             <img src="https://github-readme-stats.vercel.app/api?username=PlayerG9&show_icons=true&theme=vue-dark" alt="" />
             <h1>Git-Projects</h1>
             <div className="grid">
-                {this.state.repos.map((repo, key) => <Repo key={key} data={repo} />)}
+                {this.state.repos.map((repo, key) => <Repository key={key} repo={repo} />)}
             </div>
         </div>
     }
 
     loadRepos(){
-        fetch('https://api.github.com/users/PlayerG9/repos')
+        // sort: [created,updated,pushed,full_name(default)]
+        // updated is when repo-metadata has changed (eg description)
+        // after a 100 repos this code needs to get updated
+        fetch('https://api.github.com/users/PlayerG9/repos?sort=pushed&per_page=100')
             .then((response) => response.json())
-            .then((data) => {
-                // sort repos by last-update
-                const sorted = data.sort((a, b) => {
-                    let ad = new Date(a.pushed_at)
-                    let bd = new Date(b.pushed_at)
-                    if(ad < bd) return 1
-                    if(ad > bd) return -1
-                    return 0
-                })
-
+            .then((result) => {
                 this.setState({
-                    repos: sorted
+                    repos: result
                 })
             })
     }
 }
 
 
-class Repo extends React.Component {
+class Repository extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            iconUrl: null
+            iconUrl: null,
+            contributorCount: null
         }
     }
 
     componentDidMount(){
         this.findIconUrl()
+        this.loadContributors()
     }
 
     render(){
-        const repo = this.props.data
+        const repo = this.props.repo
         return <FlipCard>
             {/* front of the flip-card*/}
             <div className="gitrepo-front">
                 <h1>{repo.name}</h1>
                 <img className="repo-icon" src={this.state.iconUrl} alt="" />
                 <div className="stats">
+                    <span>👥{this.state.contributorCount}</span>
                     <span>👁{repo.watchers_count}</span>
                     <span>⚠{repo.open_issues_count}</span>
                     <span>★{repo.stargazers_count}</span>
@@ -107,8 +104,8 @@ class Repo extends React.Component {
     findIconUrl(){
         // this function loads the content of the git-repo README
         // and attempts to find the first <img src=url>
-        const repo = this.props.data
-        fetch('https://raw.githubusercontent.com/PlayerG9/' + repo.name + '/main/README.md')
+        const repo = this.props.repo
+        fetch(`https://raw.githubusercontent.com/${repo.full_name}/main/README.md`)
             .then((response) => response.text())
             .then((text) => {
                 var re = /<img .*src="(?<url>[a-z0-9\-:/.]+)" .*\/>/i;
@@ -124,6 +121,17 @@ class Repo extends React.Component {
                 console.error('Failed to fetch repo-readme', repo.full_name, error)
             })
     }
+
+    loadContributors(){
+        const repo = this.props.repo
+        fetch(`https://api.github.com/repos/${repo.full_name}/contributors`)
+            .then((response) => response.json())
+            .then((result) => {
+                this.setState({
+                    contributorCount: result.length
+                })
+            })
+    }
 }
 
 
@@ -131,8 +139,7 @@ class RepoLanguages extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            languages: null,
-            error: null
+            languages: null
         }
     }
 
@@ -144,7 +151,7 @@ class RepoLanguages extends React.Component {
         const languages = this.state.languages
 
         // is null/undefined or contains no keys/languages
-        if(!languages || Object.keys(languages).length === 0 || this.state.error)
+        if(!languages || Object.keys(languages).length === 0)
             return null
 
         let total = 0
@@ -163,19 +170,10 @@ class RepoLanguages extends React.Component {
         const repo = this.props.repo
 
         fetch(`https://api.github.com/repos/${repo.full_name}/languages`)
-            .then((response) => {
-                if(!response.ok)
-                    throw Error()
-                return response.json()
-            })
-            .then((data) => {
+            .then((response) => response.json())
+            .then((result) => {
                 this.setState({
-                    languages: data
-                })
-            })
-            .catch((error) => {
-                this.setState({
-                    error: error
+                    languages: result
                 })
             })
     }
