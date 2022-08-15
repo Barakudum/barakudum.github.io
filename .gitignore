@@ -1,5 +1,6 @@
 # local
 tmp/
+.vscode
 
 # Logs
 logs
