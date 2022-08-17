@@ -1,0 +1,68 @@
+
+
+.x-scroll-container {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0px 50px;
+    overflow: hidden;
+    height: 70px;
+
+    > * {
+        top: 0px;
+        left: 0px;
+    }
+
+    &:hover .x-scroll{
+        animation-play-state: paused;
+    }
+
+    &::before, &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 5%;
+        z-index: 2;
+        pointer-events: none;
+
+    }
+    &::before {
+        background-image: linear-gradient(to right,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+        left: 0;
+    }
+    &::after{
+        background-image: linear-gradient(to left,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+        right: 0;
+    }
+}
+
+.x-scroll-container .x-scroll {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    transform: translateX(100%);
+
+    animation: x-scroll var(--animation-time) linear 0s infinite;
+    &.delayed{
+        animation-delay: calc(var(--animation-time) / -2);
+    }
+
+    span {
+        background-color: aqua;
+        border: 2px solid blue;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
+
+@keyframes x-scroll {
+    0% {
+        transform:translateX(100%)
+    }
+    100% {
+        transform:translateX(-100%)
+    }
+}
