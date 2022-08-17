@@ -1,18 +1,25 @@
 import { useState } from "react"
+import problemIcon from '../assets/problem.png'
+
 
 export interface FallbackImageProps {
+    className?: string
     imageSrc: string,
-    fallbackSrc: string
+    fallbackSrc?: string
 }
 
 
 
 export default function FallbackImage(props: FallbackImageProps){
-    const [imageSrc, setImageSrc] = useState(props.imageSrc)
+    const [useFallback, setUseFallback] = useState(false)
+    const fadedClass = (useFallback && !props.fallbackSrc) ? "faded" : ""
+    const className = `fallback-image ${props.className ?? ""} ${fadedClass}`
+    
+    const imageSrc = !useFallback ? props.imageSrc : (props.fallbackSrc ?? problemIcon)
 
     function onError(){
-        setImageSrc(props.fallbackSrc)
+        setUseFallback(true)
     }
 
-    return <img className="fallback-image" src={imageSrc} alt="" loading="lazy" onError={onError}/>
+    return <img className={className} src={imageSrc} alt="" loading="lazy" onError={onError}/>
 }
