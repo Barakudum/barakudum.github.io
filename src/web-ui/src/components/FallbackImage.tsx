@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 export interface FallbackImageProps {
     imageSrc: string,
@@ -5,8 +6,13 @@ export interface FallbackImageProps {
 }
 
 
+
 export default function FallbackImage(props: FallbackImageProps){
-    return <object className="fallback-image" data={props.imageSrc} type="image/png">
-        <img className="fallback" src={props.fallbackSrc} alt=""/>
-    </object>
+    const [imageSrc, setImageSrc] = useState(props.imageSrc)
+
+    function onError(){
+        setImageSrc(props.fallbackSrc)
+    }
+
+    return <img className="fallback-image" src={imageSrc} alt="" loading="lazy" onError={onError}/>
 }
