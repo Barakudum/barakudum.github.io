@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import { fetchRepoList } from '../../../apiCommunication'
 import { RepoData } from '../../../apiCommunication/interfaces'
 import FallbackImage from '../../../components/FallbackImage'
+import IsLoading from '../../../components/IsLoading'
 
 
 export default function Websites(){
@@ -15,6 +16,7 @@ export default function Websites(){
         )
 
     return <div className='websites'>
+        {request.isLoading && <IsLoading/>}
         {websites}
     </div>
 }
