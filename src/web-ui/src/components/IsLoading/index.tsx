@@ -1,5 +1,5 @@
 import './style.scss'
-import loadingGif from './loading.gif'
+import loadingGif from '../../assets/loading.gif'
 
 
 export interface LoaderProps {
