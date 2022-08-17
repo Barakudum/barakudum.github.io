@@ -4,7 +4,9 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: flex-end;
+        align-items: stretch;
+        gap: 20px;
+        padding: 10px;
     
         .website {
             flex-grow: 1;
@@ -12,7 +14,7 @@
             text-decoration: none;
             color: blue;
             padding: 10px;
-    
+
             &:hover {
                 text-decoration: underline;
             }
