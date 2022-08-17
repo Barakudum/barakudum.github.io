@@ -9,14 +9,23 @@ import IsLoading from '../../../components/IsLoading'
 export default function Websites(){
     const request = useQuery(['github-repos'], () => fetchRepoList())
 
-    const websites = request.data
-        ?.filter((repo) => repo.homepage !== null)
-        .map((repo, key) => 
-            <WebsiteItem key={key} {...repo}/>
-        )
 
     return <div className='websites'>
         {request.isLoading && <IsLoading/>}
+        {request.isSuccess && <WebsiteList repos={request.data}/>}
+    </div>
+}
+
+
+export function WebsiteList(props: {repos: RepoData[]}){
+
+    const websites = props.repos
+        .filter((repo) => repo.homepage !== null)
+        .map((repo, key) => 
+            <WebsiteItem key={key} {...repo}/>
+        )
+    
+    return <div className='website-list'>
         {websites}
     </div>
 }
