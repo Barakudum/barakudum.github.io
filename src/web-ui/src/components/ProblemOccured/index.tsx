@@ -5,7 +5,7 @@ import problemImage from '../../assets/problem.png'
 export default function ProblemOccured(){
     return <div className='problem-occured'>
         <Icon/>
-        <span>
+        <span className='text'>
             Problem Occured
         </span>
         <Icon/>
@@ -14,5 +14,5 @@ export default function ProblemOccured(){
 
 
 function Icon(){
-    return <img src={problemImage} alt=""/>
+    return <img className='icon' src={problemImage} alt=""/>
 }
