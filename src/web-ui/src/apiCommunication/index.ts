@@ -18,7 +18,8 @@ export const buildGitUrl = (endpoint: string, searchParams: object): string =>
 export async function fetchRepoList(): Promise<T.RepoData[]> {
     const url = buildGitUrl('/users/PlayerG9/repos', {
         type: "all",  // include guest repos
-        per_page: 100  // needs to get updated after 100+ repos
+        per_page: 100,  // needs to get updated after 100+ repos
+        sort: "pushed"
     })
     const response = await fetch(url)
     if(!response.ok){
