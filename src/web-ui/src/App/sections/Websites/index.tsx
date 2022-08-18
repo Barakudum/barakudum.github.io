@@ -4,6 +4,7 @@ import { fetchRepoList } from '../../../apiCommunication'
 import { RepoData } from '../../../apiCommunication/interfaces'
 import FallbackImage from '../../../components/FallbackImage'
 import IsLoading from '../../../components/IsLoading'
+import ProblemOccured from '../../../components/ProblemOccured'
 import { getRepoIcon } from '../../utility'
 
 
@@ -13,6 +14,7 @@ export default function Websites(){
     return <div className='websites'>
         <h1>Project Websites</h1>
         {request.isLoading && <IsLoading/>}
+        {request.isError && <ProblemOccured/>}
         {request.isSuccess && <WebsiteList repos={request.data}/>}
     </div>
 }
