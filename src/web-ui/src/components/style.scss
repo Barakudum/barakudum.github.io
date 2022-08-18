@@ -4,3 +4,16 @@
         opacity: 30%;
     }
 }
+
+.external-link {
+    text-decoration: none;
+    color: blue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: blue;
+    }
+}
