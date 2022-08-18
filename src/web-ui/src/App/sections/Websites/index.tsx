@@ -6,6 +6,7 @@ import FallbackImage from '../../../components/FallbackImage'
 import IsLoading from '../../../components/IsLoading'
 import ProblemOccured from '../../../components/ProblemOccured'
 import { getRepoIcon } from '../../utility'
+import ExternalLink from '../../../components/ExternalLink'
 
 
 export default function Websites(){
@@ -35,10 +36,10 @@ export function WebsiteList(props: {repos: RepoData[]}){
 
 
 export function WebsiteItem(props: RepoData){
-    return <a className='website' href={props.homepage ?? ""} target="_blank" rel="noreferrer" >
+    return <ExternalLink className='website' url={props.homepage ?? ""}>
         <Favicon {...props}/>
         <p>{props.name}</p>
-    </a>
+    </ExternalLink>
 }
 
 function Favicon(props: RepoData){
