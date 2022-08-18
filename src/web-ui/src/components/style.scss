@@ -1,19 +1,14 @@
 .fallback-image {
     
     &.faded {
-        opacity: 30%;
+        opacity: 10%;
     }
 }
 
 .external-link {
     text-decoration: none;
-    color: blue;
 
     &:hover {
         text-decoration: underline;
-    }
-
-    &:visited {
-        color: blue;
     }
 }

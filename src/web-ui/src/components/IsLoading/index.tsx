@@ -11,7 +11,7 @@ export default function IsLoading(props: LoaderProps){
     const size = props.size ?? "80px"
 
     const style = {
-        width: size,
+        // width: size,
         height: size
     }
 

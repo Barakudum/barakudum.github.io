@@ -1,9 +1,4 @@
 .isloading {
     width: 100%;
     text-align: center;
-
-    img {
-        // invert removes black background and then apply a grayscale
-        filter: invert(100%) grayscale(100%);
-    }
 }
