@@ -4,6 +4,7 @@ import { fetchRepoList } from '../../../apiCommunication'
 import { RepoData } from '../../../apiCommunication/interfaces'
 import FallbackImage from '../../../components/FallbackImage'
 import IsLoading from '../../../components/IsLoading'
+import { getRepoIcon } from '../../utility'
 
 
 export default function Websites(){
@@ -42,7 +43,7 @@ function Favicon(props: RepoData){
     const homepageFavicon = getHomepageFavicon(props.homepage)
     // because loading the favicon from heroku would start the whole service
     const isHerokuServed = new URL(homepageFavicon).host.endsWith("herokuapp.com")
-    const repoFallback = `https://raw.githubusercontent.com/${props.full_name}/${props.default_branch}/README.assets/repo-icon.png`
+    const repoFallback = getRepoIcon(props.full_name, props.default_branch)
 
     return <FallbackImage srcs={[
         isHerokuServed ? null : homepageFavicon,
