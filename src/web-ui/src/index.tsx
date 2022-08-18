@@ -10,7 +10,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       cacheTime: 600,
-      retryDelay: 15000,
+      retryDelay: 10000,
       refetchOnWindowFocus: false,
       refetchInterval: false,
       refetchOnMount: false
