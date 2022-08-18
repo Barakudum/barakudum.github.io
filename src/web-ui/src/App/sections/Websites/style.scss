@@ -1,8 +1,12 @@
 .websites {
+    &::after {
+        background-image: url(../../../assets/bg/tech.jpg);
+        opacity: 0.3;
+    }
+
     h1 {
         text-align: center;
     }
-
     .website-list {
         display: flex;
         flex-wrap: wrap;
@@ -15,7 +19,6 @@
             flex-grow: 1;
             text-align: center;
             text-decoration: none;
-            color: blue;
             padding: 10px;
 
             &:hover {
@@ -24,7 +27,6 @@
     
             .fallback-image {
                 width: 100px;
-                // height: 100px;
             }
         }
     }

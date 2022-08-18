@@ -12,7 +12,7 @@ import ExternalLink from '../../../components/ExternalLink'
 export default function Websites(){
     const request = useQuery(['github-repos'], () => fetchRepoList())
 
-    return <div className='websites'>
+    return <div className='websites parallax'>
         <h1>Project Websites</h1>
         {request.isLoading && <IsLoading/>}
         {request.isError && <ProblemOccured/>}
