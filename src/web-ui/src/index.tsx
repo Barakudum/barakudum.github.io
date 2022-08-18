@@ -12,6 +12,8 @@ const queryClient = new QueryClient({
       cacheTime: 600,
       retryDelay: 15000,
       refetchOnWindowFocus: false,
+      refetchInterval: false,
+      refetchOnMount: false
     }
   }
 })
