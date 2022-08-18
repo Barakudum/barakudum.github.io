@@ -14,6 +14,16 @@ export const buildGitUrl = (endpoint: string, searchParams?: object): string =>
     buildUrl('https://api.github.com', endpoint, searchParams ?? {})
 
 
+export async function getRateLimit(): Promise<T.RateLimit> {
+    const url = buildGitUrl('/rate_limit')
+    const response = await fetch(url)
+    if(!response.ok){
+        throw new Error()
+    }
+    const data = await response.json()
+    return data["rate"]
+}
+
 
 export async function fetchRepoList(): Promise<T.RepoData[]> {
     const url = buildGitUrl('/users/PlayerG9/repos', {

@@ -1,3 +1,9 @@
+export interface RateLimit {
+    limit: number,
+    remaining: number,
+    reset: number,
+    used: number
+}
 
 
 export interface RepoData {
