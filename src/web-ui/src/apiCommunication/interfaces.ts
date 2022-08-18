@@ -14,3 +14,8 @@ export interface RepoData {
     language: string | null,
     default_branch: string | "main"
 }
+
+
+export interface Languages {
+    [language: string]: number
+}
