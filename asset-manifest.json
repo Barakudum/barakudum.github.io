@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.5311e3e5.css",
-    "main.js": "/static/js/main.1128b75e.js",
+    "main.css": "/static/css/main.fd7ddbcd.css",
+    "main.js": "/static/js/main.3e54991b.js",
     "static/js/787.62449090.chunk.js": "/static/js/787.62449090.chunk.js",
-    "static/media/creations.jpg": "/static/media/creations.a6f11fef5d5fd186908b.jpg",
-    "static/media/python-packages.jpg": "/static/media/python-packages.7f50bd1e270ea83be30c.jpg",
-    "static/media/github-projects.jpg": "/static/media/github-projects.1fd3ec0e91f7f47ffa2a.jpg",
-    "static/media/aboutme.jpg": "/static/media/aboutme.e8cda43b223c99bc754d.jpg",
-    "static/media/pypi.svg": "/static/media/pypi.9ea6d4fce97c9dc7f883.svg",
+    "static/media/tech.jpg": "/static/media/tech.a6f11fef5d5fd186908b.jpg",
+    "static/media/github.jpg": "/static/media/github.1fd3ec0e91f7f47ffa2a.jpg",
     "static/media/python.png": "/static/media/python.c32c0433b95e4b348c8d.png",
     "static/media/website.png": "/static/media/website.5b3b38365e6892dc7880.png",
+    "static/media/problem.png": "/static/media/problem.e145a7c5bf5e18261590.png",
     "index.html": "/index.html",
-    "main.5311e3e5.css.map": "/static/css/main.5311e3e5.css.map",
-    "main.1128b75e.js.map": "/static/js/main.1128b75e.js.map",
+    "main.fd7ddbcd.css.map": "/static/css/main.fd7ddbcd.css.map",
+    "main.3e54991b.js.map": "/static/js/main.3e54991b.js.map",
     "787.62449090.chunk.js.map": "/static/js/787.62449090.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5311e3e5.css",
-    "static/js/main.1128b75e.js"
+    "static/css/main.fd7ddbcd.css",
+    "static/js/main.3e54991b.js"
   ]
 }
