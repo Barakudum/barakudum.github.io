@@ -9,8 +9,8 @@ import IsLoading from '../../../components/IsLoading'
 export default function Websites(){
     const request = useQuery(['github-repos'], () => fetchRepoList())
 
-
     return <div className='websites'>
+        <h1>Project Websites</h1>
         {request.isLoading && <IsLoading/>}
         {request.isSuccess && <WebsiteList repos={request.data}/>}
     </div>
@@ -33,12 +33,25 @@ export function WebsiteList(props: {repos: RepoData[]}){
 
 export function WebsiteItem(props: RepoData){
     return <a className='website' href={props.homepage ?? ""} target="_blank" rel="noreferrer" >
-        <FallbackImage imageSrc={getHomepageIcon(props.homepage)} fallbackSrc="/favicon.ico"/>
+        <Favicon {...props}/>
         <p>{props.name}</p>
     </a>
 }
 
-function getHomepageIcon(homepage: string | null){
+function Favicon(props: RepoData){
+    const homepageFavicon = getHomepageFavicon(props.homepage)
+    // because loading the favicon from heroku would start the whole service
+    const isHerokuServed = new URL(homepageFavicon).host.endsWith("herokuapp.com")
+    const repoFallback = `https://raw.githubusercontent.com/${props.full_name}/${props.default_branch}/README.assets/repo-icon.png`
+
+    return <FallbackImage srcs={[
+        isHerokuServed ? null : homepageFavicon,
+        repoFallback,
+        "/favicon.ico"
+    ]}/>
+}
+
+function getHomepageFavicon(homepage: string | null){
     homepage = homepage ?? ""
     if(!homepage.endsWith("/"))
         return `${homepage}/favicon.ico`
