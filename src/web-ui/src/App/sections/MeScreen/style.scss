@@ -1,0 +1,58 @@
+.me-screen {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+
+    &::after {
+        background-image: url(../../../assets/bg/abstract.jpg);
+        opacity: 0.4;
+    }
+
+    > * {
+        position: relative;
+        height: 100%;
+        width: 50%;
+        
+        > * {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .text-pane {
+        > * {
+            width: 80%;
+
+            h1 {
+                padding-left: 0px;
+            }
+        }
+    }
+
+    .icon-pane {
+        .icon {
+            width: 60%;
+            height: auto;
+            background-color: white;
+            border-radius: 50%;
+            padding: 1px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .me-screen {
+        > * {
+            height: 50%;
+            width: 100%;
+        }
+
+        .text-pane {
+            > * {
+                text-align: center;
+            }
+        }
+    }
+}
