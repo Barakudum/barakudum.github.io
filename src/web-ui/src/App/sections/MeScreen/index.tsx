@@ -7,7 +7,7 @@ export default function MeScreen(){
         <div className='text-pane'>
             <div>
                 <h1>PlayerG9</h1>
-                <h2>A Programmer without life</h2>
+                <h2>A Programmer without a life</h2>
             </div>
         </div>
         <div className='icon-pane'>
