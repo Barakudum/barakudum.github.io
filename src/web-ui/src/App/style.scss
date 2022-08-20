@@ -1,10 +1,11 @@
 :root {
     --animation-time: 20s;
     --primary-background: 0, 0, 0;
-    --accent-background: 38, 0, 255;
+    --accent-background: 0, 130, 255;
     --primary-foreground: 200, 200, 200;
     --accent-foreground: 0, 255, 242;
-    --link-color: rgb(0, 255, 255);
+    --link-color: rgb(0, 200, 200);
+    --test-color: rgb(0, 81, 255);
 
     background-color: rgb(var(--primary-background));
     color: rgb(var(--primary-foreground))
