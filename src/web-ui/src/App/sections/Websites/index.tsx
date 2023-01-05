@@ -4,7 +4,7 @@ import { fetchRepoList } from '../../../apiCommunication'
 import { RepoData } from '../../../apiCommunication/interfaces'
 import FallbackImage from '../../../components/FallbackImage'
 import IsLoading from '../../../components/IsLoading'
-import ProblemOccured from '../../../components/ProblemOccured'
+import ProblemOccurred from '../../../components/ProblemOccured'
 import { getRepoIcon } from '../../utility'
 import ExternalLink from '../../../components/ExternalLink'
 
@@ -15,7 +15,7 @@ export default function Websites(){
     return <div className='websites parallax'>
         <h1>Project Websites</h1>
         {request.isLoading && <IsLoading/>}
-        {request.isError && <ProblemOccured/>}
+        {request.isError && <ProblemOccurred/>}
         {request.isSuccess && <WebsiteList repos={request.data}/>}
     </div>
 }
@@ -42,8 +42,11 @@ export function WebsiteItem(props: RepoData){
 
 function Favicon(props: RepoData){
     const homepageFavicon = getHomepageFavicon(props.homepage!)
-    // because loading the favicon from heroku would start the whole service
-    const isHerokuServed = new URL(homepageFavicon, window.location.origin).host.endsWith("herokuapp.com")
+    var isHerokuServed = false;
+    try {
+        // because loading the favicon from heroku would start the whole service
+        isHerokuServed = new URL(homepageFavicon, window.location.origin).host.endsWith("herokuapp.com")
+    } catch {}
     const repoFallback = getRepoIcon(props.full_name, props.default_branch)
 
     return <FallbackImage srcs={[
