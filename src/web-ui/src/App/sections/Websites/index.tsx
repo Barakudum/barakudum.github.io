@@ -23,29 +23,27 @@ export default function Websites(){
 
 export function WebsiteList(props: {repos: RepoData[]}){
 
-    const websites = props.repos
-        .filter((repo) => repo.homepage !== null)
+    return <div className='website-list'>
+        {props.repos
+        .filter((repo) => repo.homepage)
         .map((repo, key) => 
             <WebsiteItem key={key} {...repo}/>
-        )
-    
-    return <div className='website-list'>
-        {websites}
+        )}
     </div>
 }
 
 
 export function WebsiteItem(props: RepoData){
-    return <ExternalLink className='website' url={props.homepage ?? ""}>
+    return <ExternalLink className='website' url={props.homepage!}>
         <Favicon {...props}/>
         <p>{props.name}</p>
     </ExternalLink>
 }
 
 function Favicon(props: RepoData){
-    const homepageFavicon = getHomepageFavicon(props.homepage)
+    const homepageFavicon = getHomepageFavicon(props.homepage!)
     // because loading the favicon from heroku would start the whole service
-    const isHerokuServed = new URL(homepageFavicon).host.endsWith("herokuapp.com")
+    const isHerokuServed = new URL(homepageFavicon, window.location.origin).host.endsWith("herokuapp.com")
     const repoFallback = getRepoIcon(props.full_name, props.default_branch)
 
     return <FallbackImage srcs={[
@@ -55,8 +53,7 @@ function Favicon(props: RepoData){
     ]}/>
 }
 
-function getHomepageFavicon(homepage: string | null){
-    homepage = homepage ?? ""
+function getHomepageFavicon(homepage: string){
     if(!homepage.endsWith("/"))
         return `${homepage}/favicon.ico`
     return `${homepage}favicon.ico`
